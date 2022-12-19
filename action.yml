@@ -11,10 +11,7 @@ runs:
   
     - run: find . -name "*.sln" -exec sh -c 'dotnet coverage collect dotnet test "$1" --output ./Tests/CodeCoverage-$(basename "$1") --output-format cobertura' sh {} \;
       shell: bash
-      
-    - run: find . -name "*cobertura.xml"
-      shell: bash      
-            
+
     - name: Code Coverage Report
       uses: irongut/CodeCoverageSummary@v1.3.0
       with:
