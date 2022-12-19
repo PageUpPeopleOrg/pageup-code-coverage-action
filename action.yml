@@ -6,10 +6,10 @@ runs:
   steps:
     - run: dotnet tool install --global dotnet-coverage
       shell: bash
-    - run: find . -name "*.sln" -exec dotnet build {} --configuration Release;
+    - run: find . -name "*.sln" -exec dotnet build {} --configuration Release  \;
       shell: bash
   
-    - run: find . -name "*.sln" -exec dotnet build {} --configuration Release --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./coverage
+    - run: find . -name "*.sln" -exec dotnet build {} --configuration Release --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./coverage  \;
       shell: bash
             
     - name: Code Coverage Report
