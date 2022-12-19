@@ -9,7 +9,7 @@ runs:
     - run: find . -name "*.sln" -exec dotnet build {} --configuration Release  \;
       shell: bash
   
-    - run: find . -name "*.sln" -exec dotnet coverage collect dotnet test {} --output ./Tests/CodeCoverage --output-format cobertura  \;
+    - run: find . -name "*.sln" -exec dotnet coverage collect dotnet test {} --output ./Tests/CodeCoverage{} --output-format cobertura  \;
       shell: bash
             
     - name: Code Coverage Report
