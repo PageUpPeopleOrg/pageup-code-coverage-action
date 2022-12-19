@@ -6,10 +6,14 @@ runs:
   steps:
     - run: dotnet tool install --global dotnet-coverage
       shell: bash
+      
+    - run: curl  https://raw.githubusercontent.com/PageUpPeopleOrg/pageup-codes-coverage-action/main/automated.runsettings -o automated.runsettings
+      shell: bash
+       
     - run: find . -name "*.sln" -exec dotnet build {} --configuration Release  \;
       shell: bash
   
-    - run: find . -name "*.sln" -exec sh -c 'dotnet coverage collect dotnet test "$1" --output ./Tests/CodeCoverage-$(basename "$1") --output-format cobertura' sh {} \;
+    - run: find . -name "*.sln" -exec sh -c 'dotnet coverage collect dotnet test "$1" --output ./Tests/CodeCoverage-$(basename "$1") --output-format cobertura --settings:automated.runsettings' sh {} \;
       shell: bash
 
     - name: Code Coverage Report
