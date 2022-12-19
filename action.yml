@@ -12,7 +12,7 @@ runs:
     - run: find . -name "*.sln" -exec dotnet coverage collect dotnet test {} --output ./Tests/CodeCoverage{} --output-format cobertura  \;
       shell: bash
       
-    - run: echo Tests/CodeCoverage/**/*cobertura.xml
+    - run: pwd
       shell: bash      
             
     - name: Code Coverage Report
