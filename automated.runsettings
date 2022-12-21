@@ -9,8 +9,6 @@
               <Include>
                 <CompanyName>PageUp</CompanyName>
               </Include>
-              <Exclude>             
-              </Exclude>
             </CompanyNames>
             <Attributes>
               <Exclude>
