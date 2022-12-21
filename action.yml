@@ -13,7 +13,7 @@ runs:
     - run: find . -name "*.sln" -exec dotnet build {} --configuration Release  \;
       shell: bash
   
-    - run: find . -name "*.sln" -exec sh -c 'dotnet coverage collect dotnet test "$1" --output ./Tests/CodeCoverage-$(basename "$1") --output-format cobertura --settings:automated.runsettings' sh {} \;
+    - run: find . -name "*.sln" -exec sh -c 'dotnet coverage collect "dotnet test app/developer-portal.sln --settings:automated.runsettings"  --output ./Tests/CodeCoverage-developer-portal --output-format cobertura' sh {} \;
       shell: bash
 
     - name: Code Coverage Report
