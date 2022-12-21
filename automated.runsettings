@@ -7,7 +7,7 @@
           <CodeCoverage>
             <CompanyNames>
               <Include>
-                <CompanyName>PageUp</CompanyName>
+                <CompanyName>(?i).*pageup.*</CompanyName>
               </Include>
             </CompanyNames>
             <Attributes>
