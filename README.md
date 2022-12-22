@@ -14,31 +14,31 @@ Use the the below workflow template to configure concoverage reporting for your 
 
 
 `
-name: CI
-on:
-  pull_request:
-    branches: [ "main" ]
+  name: CI
+  on:
+    pull_request:
+      branches: [ "main" ]
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    if: github.event.pull_request.draft == false
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      if: github.event.pull_request.draft == false
 
-    steps:
-      - name: 🛒 Checkout code
-        uses: actions/checkout@v3
+      steps:
+        - name: 🛒 Checkout code
+          uses: actions/checkout@v3
 
-      - name: 🔐 PageUp Code Scanning Action
-        uses: PageUpPeopleOrg/pageup-codescanning-action@main      
-        if: always()
-      - name: 📈 PageUp Code Coverage report
-        uses: PageUpPeopleOrg/pageup-code-coverage-action@main      
-        if: always()
-        with:
-          failBuild: 'false'
-          percentLowRange: '50'
-          percentHighRange: '80'
-`
+        - name: 🔐 PageUp Code Scanning Action
+          uses: PageUpPeopleOrg/pageup-codescanning-action@main      
+          if: always()
+        - name: 📈 PageUp Code Coverage report
+          uses: PageUpPeopleOrg/pageup-code-coverage-action@main      
+          if: always()
+          with:
+            failBuild: 'false'
+            percentLowRange: '50'
+            percentHighRange: '80'
+
 
 ### .Net solution setup
 
