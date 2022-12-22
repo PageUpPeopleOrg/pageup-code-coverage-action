@@ -13,6 +13,11 @@ Use the the below workflow template to configure concoverage reporting for your 
 - using **failBuild** You can optionally configure thebuidl to failif you drop
 
 `
+name: CI
+on:
+  pull_request:
+    branches: [ "main" ]
+
 jobs:
   build:
     runs-on: ubuntu-latest
