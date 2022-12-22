@@ -9,7 +9,7 @@ Add this action for you PR's to enable code coverage reporting.
 ### Github workflow setup
 
 Use the the below workflow template to configure concoverage reporting for your repo.
-- Depending on the current test coverage level, you may want to shift up the **percentLowRange**  / **percentHighRange** range for the coverage reporting to incrementally move the dial upward on coverage
+- Depending on the current test coverage level, you may want to shift up or down the **percentLowRange**  / **percentHighRange** range for the coverage reporting to incrementally move the dial upward on coverage
 - using **failBuild** You can optionally configure thebuidl to failif you drop
 
 `
