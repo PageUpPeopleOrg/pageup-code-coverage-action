@@ -9,8 +9,11 @@ runs:
       
     - run: curl  https://raw.githubusercontent.com/PageUpPeopleOrg/pageup-code-coverage-action/main/automated.runsettings -o automated.runsettings
       shell: bash
+      
+    - run: find . -name "*.sln" -exec dotnet build {} --configuration Release;
+      shell: bash
   
-    - run: find . -name "*.sln" -exec sh -c 'dotnet coverage collect "dotnet test app/developer-portal.sln --settings:automated.runsettings"  --output ./Tests/CodeCoverage-developer-portal --output-format cobertura' sh {} \;
+    - run: find . -name "*.sln" -exec sh -c 'dotnet coverage collect "dotnet test app/developer-portal.sln --settings:automated.runsettings --no-build --no-restore"  --output ./Tests/CodeCoverage-developer-portal --output-format cobertura' sh {} \;
       shell: bash
 
     - name: Code Coverage Report
