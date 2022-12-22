@@ -36,7 +36,7 @@ runs:
       with:
         filename: Tests/*cobertura.xml
         badge: true
-        fail_below_min: '${{ inputs.failBuild }}
+        fail_below_min: ${{ inputs.failBuild }}
         format: markdown
         hide_branch_rate: false
         hide_complexity: true
