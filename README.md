@@ -45,9 +45,9 @@ If you don't already have a workflow in github you will need to add the below ya
 
 By default, when running code coverage, all assemblies touched by the test are included in code coverage reporting.
 This is not ideal since it means 3rd party NUGET packages, as well as your tests assemblies get included in coverage which throws out the calculation and adds noise.
-Therefore, rather than trying to manage along and complicated list of exclusions whichmay vary by project, we have option for configuring what to include in coverage.
+Therefore, rather than trying to manage a long and complicated list of exclusions which may vary by project, we have opted for configuring what to include in coverage, rather than what to exclude.
 
-To ensure only your code assemblies are included in code coverage and not inlude test suites or nuget packages, perform the following:
+To ensure only your code assemblies are included in code coverage and not include your test suite projects or nuget packages, perform the following:
 
 In visual studio set the Company property to "PageUp" under each projects properties you whish to include 
  - Project settings ->  Package -> General -> "Company"  => set to "PageUp"
