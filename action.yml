@@ -1,6 +1,21 @@
 name: 'PageUp Code Coverage Action'
 author: "PageUp"
-description: "Execute code coverage analysis"
+description: "Execute code coverage analysis for .net core apps"
+
+inputs:
+  failBuild:
+    description: 'Fail build on below low range coverage'
+    default: 'false'
+    required: false
+  percentLowRange:
+    description: 'The percentage level below which your coverage is "red"'
+    default: '50'
+    required: false
+  percentHighRange:
+    description: 'The percentage level above which your coverage is "green"'
+    default: '80'
+    required: false
+
 runs:
   using: "composite"
   steps:
@@ -21,13 +36,13 @@ runs:
       with:
         filename: Tests/*cobertura.xml
         badge: true
-        fail_below_min: false
+        fail_below_min: '${{ inputs.failBuild }}
         format: markdown
         hide_branch_rate: false
         hide_complexity: true
         indicators: true
         output: both
-        thresholds: '60 80'
+        thresholds: '${{ inputs.percentLowRange }} ${{ inputs.percentHighRange }}'
     - name: Add Coverage PR Comment
       uses: marocchino/sticky-pull-request-comment@v2
       if: github.event_name == 'pull_request'
