@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+    <CodeCoverage>       
+        <!-- Match the company name property in the assembly: -->
+        <CompanyNames>
+            <Include>
+                <CompanyName>(?i).*pageup.*</CompanyName>
+            </Include>
+        </CompanyNames>
+
+
+        <EnableStaticManagedInstrumentation>True</EnableStaticManagedInstrumentation>
+        <EnableDynamicManagedInstrumentation>True</EnableDynamicManagedInstrumentation>
+
+    </CodeCoverage>
+</Configuration>
