@@ -13,7 +13,7 @@ Use the the below workflow template to configure concoverage reporting for your 
 - using **failBuild** You can optionally configure thebuidl to failif you drop
 
 
-`
+```
   name: CI
   on:
     pull_request:
@@ -38,7 +38,7 @@ Use the the below workflow template to configure concoverage reporting for your 
             failBuild: 'false'
             percentLowRange: '50'
             percentHighRange: '80'
-
+```
 
 ### .Net solution setup
 
