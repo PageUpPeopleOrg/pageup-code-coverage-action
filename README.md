@@ -12,6 +12,7 @@ Use the the below workflow template to configure concoverage reporting for your 
 - Depending on the current test coverage level, you may want to shift up or down the **percentLowRange**  / **percentHighRange** range for the coverage reporting to incrementally move the dial upward on coverage
 - using **failBuild** You can optionally configure thebuidl to failif you drop
 
+If you don't already have a workflow in github you will need to add the below yaml to .github/workflows/main.yaml
 
 ```
   name: CI
