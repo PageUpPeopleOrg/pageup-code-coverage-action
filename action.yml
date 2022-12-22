@@ -1,4 +1,4 @@
-name: 'PageUp Code Coverage Action'
+name: 'PageUp Dotnet Core Code Coverage Action'
 author: "PageUp"
 description: "Execute code coverage analysis for .net core apps"
 
