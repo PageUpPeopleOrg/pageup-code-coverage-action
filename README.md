@@ -12,4 +12,4 @@ Therefore, rather than trying to manage along and complicated list of exclusions
 To ensure only your code assemblies are included in code coverage and not inlude test suites or nuget packages, perform the following:
 
 In visual studio set the Company property to "PageUp" under each projects properties you whish to include 
- - Project settings ->  Package -> General -> "Company" 
+ - Project settings ->  Package -> General -> "Company"  => set to "PageUp"
