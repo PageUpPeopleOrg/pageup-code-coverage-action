@@ -38,7 +38,7 @@ runs:
     - run: find . -name "*.sln" -exec sh -c 'dotnet coverage collect "dotnet test "$1" --no-build --no-restore" --settings:coverage.settings --output ./Tests/CodeCoverage-$(basename "$1") --output-format cobertura' sh {} \;
       shell: bash
 
-    - run: "[ $INCLUDE_FULL_REPORT == 'true' ] && reportgenerator -reports:./Tests/*cobertura.xml' -targetdir:./tests/coveragereport -reporttypes:Html"
+    - run: "[ $INCLUDE_FULL_REPORT == 'true' ] && reportgenerator -reports:./Tests/*cobertura.xml -targetdir:./tests/coveragereport -reporttypes:Html"
       shell: bash
       env:
         INCLUDE_FULL_REPORT: ${{ inputs.includeFullReport }}
