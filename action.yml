@@ -41,7 +41,8 @@ runs:
       uses: actions/upload-artifact@v1.0.0
       with:
         name: CoverageReport 
-        path: tests/coveragereport 
+        path: tests/coveragereport
+        retention-days: 30
      
     - name: Generate Code Coverage PR report
       uses: irongut/CodeCoverageSummary@v1.3.0
@@ -56,7 +57,7 @@ runs:
         output: both
         thresholds: '${{ inputs.percentLowRange }} ${{ inputs.percentHighRange }}'
         
-    - run: echo "\r\nFull report:  [Code Coverage]($GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts/)" >> code-coverage-results.md
+    - run: echo -e "\r\nFull report: [Code Coverage]($GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts/)" >> code-coverage-results.md
       shell: bash
         
     - name: Write to Job Summary
