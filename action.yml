@@ -55,9 +55,9 @@ runs:
         indicators: true
         output: both
         thresholds: '${{ inputs.percentLowRange }} ${{ inputs.percentHighRange }}'
+        
     - run: echo "\r\nFull report:  [Code Coverage]($GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts/)" >> code-coverage-results.md
       shell: bash
-  
         
     - name: Write to Job Summary
       run: cat code-coverage-results.md >> $GITHUB_STEP_SUMMARY
