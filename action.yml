@@ -63,8 +63,10 @@ runs:
         output: both
         thresholds: '${{ inputs.percentLowRange }} ${{ inputs.percentHighRange }}'
         
-    - run: echo -e "\r\nSee full report under 'artifacts' [here]($GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID)" >> code-coverage-results.md
+    - run: "[ $INCLUDE_FULL_REPORT == 'true' ] && echo -e '\r\nSee full report under \'artifacts\' [here]($GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID)' >> code-coverage-results.md"
       shell: bash
+      env:
+        INCLUDE_FULL_REPORT: ${{ inputs.includeFullReport }}
         
     - name: Write to Job Summary
       run: cat code-coverage-results.md >> $GITHUB_STEP_SUMMARY
